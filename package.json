@@ -27,6 +27,9 @@
   "peerDependencies": {
     "typescript": ">=4.6"
   },
+  "dependencies": {
+    "process-wrapper": "^1.0.0"
+  },
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",
     "@types/node": "^18.15.3",
@@ -43,8 +46,5 @@
     "ignorePatterns": [
       "test_data"
     ]
-  },
-  "dependencies": {
-    "process-wrapper": "^0.1.0"
   }
 }
