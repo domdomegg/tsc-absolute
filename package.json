@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",
+    "@types/node": "^18.15.3",
     "eslint": "^8.32.0",
     "eslint-config-domdomegg": "^1.2.1",
     "ts-node": "^10.9.1",
