@@ -1,15 +1,18 @@
 {
-  "name": "typescript-library-template",
+  "name": "tsc-absolute",
   "version": "0.0.0",
-  "description": "Template for creating TypeScript libraries",
+  "description": "TypeScript compiler (tsc), but errors have absolute paths",
   "license": "MIT",
   "author": "Adam Jones (domdomegg)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/domdomegg/typescript-library-template.git"
+    "url": "https://github.com/domdomegg/tsc-absolute.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "absolute-tsc": "./src/index.js"
+  },
   "files": [
     "dist"
   ],
@@ -21,16 +24,23 @@
     "build": "tsc --project tsconfig.build.json",
     "prepublishOnly": "npm run clean && npm run build"
   },
+  "peerDependencies": {
+    "typescript": ">=4"
+  },
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",
     "eslint": "^8.32.0",
-    "eslint-config-domdomegg": "^1.2.0",
-    "typescript": "^4.9.4",
+    "eslint-config-domdomegg": "^1.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
     "vitest": "^0.29.2"
   },
   "eslintConfig": {
     "extends": [
       "eslint-config-domdomegg"
     ]
+  },
+  "dependencies": {
+    "process-wrapper": "^0.1.0"
   }
 }

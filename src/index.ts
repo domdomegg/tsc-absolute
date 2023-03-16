@@ -1,3 +1,12 @@
-export const sum = (a: number, b: number): number => a + b;
+#!/usr/bin/env node
 
-export const multiply = (a: number, b: number): number => a * b;
+import spawnWrapped from 'process-wrapper';
+import { lineMapper } from './lib';
+
+const main = () => {
+  spawnWrapped('tsc', {
+    mapStdout: lineMapper,
+  });
+};
+
+main();
