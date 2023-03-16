@@ -1,6 +1,6 @@
 {
   "name": "tsc-absolute",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "TypeScript compiler (tsc), but errors have absolute paths",
   "license": "MIT",
   "author": "Adam Jones (domdomegg)",
@@ -39,7 +39,9 @@
     "extends": [
       "eslint-config-domdomegg"
     ],
-    "ignorePatterns": ["test_data"]
+    "ignorePatterns": [
+      "test_data"
+    ]
   },
   "dependencies": {
     "process-wrapper": "^0.1.0"
