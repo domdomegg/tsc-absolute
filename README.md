@@ -77,6 +77,8 @@ And in your `workflow.yaml`, add a step:
     echo "::add-matcher::.github/matchers/tsc-absolute.json"
 ```
 
+As an example, when you're done you can get output like this on your commits and PRs: https://github.com/domdomegg/tsc-absolute-github-actions-example/commit/cf254dc82fac7099070fbaa3cd78f83989c70d5a#diff-a2a171449d862fe29692ce031981047d7ab755ae7f84c707aef80701b3ea0c80
+
 ## Accuracy note
 
 This is a best-efforts approach at correcting the error output and is usually very accurate. However, as the TypeScript compiler does not provide structured logging nor is it part of their public interface, it may break if TypeScript's logging format changes.
