@@ -6,6 +6,12 @@ Inspired by [this 2016 TypeScript issue](https://github.com/microsoft/TypeScript
 
 This is particularly useful for navigating to errors in monorepo setups, or for automating error detection and location from logs.
 
+## Installation
+
+```sh
+npm install --save-dev typescript tsc-absolute
+```
+
 ## Usage
 
 Just use it as a drop-in replacement for tsc wherever you use it. All arguments are passed right through. For example:
@@ -31,7 +37,11 @@ to absolute ones:
 
 ### Which TypeScript version does it use?
 
-It accepts TypeScript as a peer dependency, so just install TypeScript as normal to whatever version you want and it'll use that one.
+It supports any version of TypeScript released in the last 12 months, mirroring [the TypeScript team's security support window](https://github.com/microsoft/TypeScript/issues/49088#issuecomment-1169372587). This is validated with intregration tests that run in CI.
+
+The library accepts TypeScript as a peer dependency, so just install TypeScript like normal to your preferred version and tsc-absolute will use that one.
+
+It may work with older versions, but this is not explicitly supported. You should probably update anyways to ensure you continue to recieve security updates.
 
 ### GitHub problem matching
 

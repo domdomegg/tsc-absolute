@@ -9,7 +9,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ts-version: ['4.0', '4.1', '4.2', '4.3', '4.4', '4.5', '4.6', '4.7', '4.8', '4.9']
+        # There isn't an official TypeScript EOL policy, however security
+        # updates are only shipped for the last year of releases. If people
+        # don't care that they're using a version that isn't even maintained
+        # for security patches, then I think they can't expect new libraries
+        # are tested beyond this limit either.
+        # https://github.com/microsoft/TypeScript/issues/49088#issuecomment-1169372587
+        ts-version: ['4.6', '4.7', '4.8', '4.9']
     env:
       CI: true
     steps:
