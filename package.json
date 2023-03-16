@@ -38,7 +38,8 @@
   "eslintConfig": {
     "extends": [
       "eslint-config-domdomegg"
-    ]
+    ],
+    "ignorePatterns": ["test_data"]
   },
   "dependencies": {
     "process-wrapper": "^0.1.0"

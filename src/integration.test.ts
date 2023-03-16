@@ -26,10 +26,10 @@ test('help section not affected', () => {
   expect(resTscAbsolute.stdout.toString()).toBe(resTsc.stdout.toString());
 });
 
-test('affects error messages correctly', () => {
+test('affects error messages correctly (no pretty)', () => {
   const res = spawnSync(
     resolve(__dirname, 'test_run.js'),
-    ['--noEmit', resolve(__dirname, '..', 'test_data', 'example.ts')],
+    ['--noEmit', '--pretty', 'false', resolve(__dirname, '..', 'test_data', 'example.ts')],
     { env: { PATH: process.env['PATH'] } },
   );
   expect(res.error).toBe(undefined);
@@ -37,5 +37,18 @@ test('affects error messages correctly', () => {
 ${process.cwd()}/test_data/example.ts(5,7): error TS2322: Type 'number' is not assignable to type 'string'.
 ${process.cwd()}/test_data/example.ts(6,19): error TS2551: Property 'loog' does not exist on type 'Console'. Did you mean 'log'?
 `);
+  expect(res.stderr.toString()).toBe('');
+});
+
+test('affects error messages correctly (pretty)', () => {
+  const res = spawnSync(
+    resolve(__dirname, 'test_run.js'),
+    ['--noEmit', '--pretty', 'true', resolve(__dirname, '..', 'test_data', 'example.ts')],
+    { env: { PATH: process.env['PATH'] } },
+  );
+  expect(res.error).toBe(undefined);
+  expect(res.stdout.toString()).toContain(`[96m${process.cwd()}/test_data/example.ts[0m`);
+  expect(res.stdout.toString()).toContain(`[96m${process.cwd()}/test_data/example.ts[0m`);
+  expect(res.stdout.toString()).toContain(`[96m${process.cwd()}/test_data/example.ts[0m`);
   expect(res.stderr.toString()).toBe('');
 });

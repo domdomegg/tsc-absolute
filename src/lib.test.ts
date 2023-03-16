@@ -54,6 +54,14 @@ test.each([
     'test_data/example.ts(6,19): error TS2551: Property \'loog\' does not exist on type \'Console\'. Did you mean \'log\'?\n',
     '/my-workspace/my-package/test_data/example.ts(6,19): error TS2551: Property \'loog\' does not exist on type \'Console\'. Did you mean \'log\'?\n',
   ],
+  [
+    'test_data/example.ts:3:1 - error TS2588: Cannot assign to \'x\' because it is a constant.\n',
+    '/my-workspace/my-package/test_data/example.ts:3:1 - error TS2588: Cannot assign to \'x\' because it is a constant.\n',
+  ],
+  [
+    '[96mtest_data/example.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS2588: [0mCannot assign to \'x\' because it is a constant.\n',
+    '[96m/my-workspace/my-package/test_data/example.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS2588: [0mCannot assign to \'x\' because it is a constant.\n',
+  ],
   noChange('2 import { missing } from \'./index\';\n'),
   noChange('           ~~~~~~~\n'),
   noChange('src/something.ts\n'),
