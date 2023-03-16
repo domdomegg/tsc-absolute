@@ -11,7 +11,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "tsc-absolute": "./src/index.js"
+    "tsc-absolute": "./dist/index.js"
   },
   "files": [
     "dist"
