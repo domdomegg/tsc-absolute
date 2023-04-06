@@ -54,7 +54,7 @@ With this configuration, you can set up a GitHub problem matcher, for example in
       "owner": "tsc-absolute",
       "pattern": [
         {
-          "regexp": "(?:^|\\s)([^\\s].*)[\\(:](\\d+)[,:](\\d+)(?:\\):\\s+|\\s+-\\s+)(error|warning|info)\\s+(TS\\d+)\\s*:\\s*(.*)$",
+          "regexp": "(?:^|\\s)([^\\s][^:]*)[\\(:](\\d+)[,:](\\d+)(?:\\):\\s+|\\s+-\\s+)(error|warning|info)\\s+(TS\\d+)\\s*:\\s*(.*)$",
           "file": 1,
           "line": 2,
           "column": 3,
