@@ -1,6 +1,6 @@
 {
   "name": "tsc-absolute",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript compiler (tsc), but errors have absolute paths",
   "license": "MIT",
   "author": "Adam Jones (domdomegg)",
