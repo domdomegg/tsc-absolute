@@ -19,7 +19,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest --watch",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint",
     "clean": "rm -rf dist",
     "build": "tsc --project tsconfig.build.json",
     "prepublishOnly": "npm run clean && npm run build"
@@ -33,18 +33,11 @@
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",
     "@types/node": "^18.15.3",
-    "eslint": "^8.32.0",
-    "eslint-config-domdomegg": "^1.2.1",
+    "eslint": "^9.0.0",
+    "eslint-config-domdomegg": "^2.0.9",
+    "globals": "^15.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
     "vitest": "^4.1.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint-config-domdomegg"
-    ],
-    "ignorePatterns": [
-      "test_data"
-    ]
   }
 }
