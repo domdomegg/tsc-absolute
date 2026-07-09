@@ -15,7 +15,12 @@ jobs:
         # for security patches, then I think they can't expect new libraries
         # are tested beyond this limit either.
         # https://github.com/microsoft/TypeScript/issues/49088#issuecomment-1169372587
-        ts-version: ['4.6', '4.7', '4.8', '4.9']
+        # We test across the modern TypeScript 5.x line. Older releases
+        # (4.6-4.9, and 5.0-5.5) are no longer supported by our modern
+        # toolchain: current @types/node uses .d.ts syntax (e.g.
+        # IteratorObject) that only TypeScript >= 5.6 can parse, and vitest 4
+        # requires @types/node >= 20.
+        ts-version: ['5.6', '5.7', '5.8', '5.9']
     env:
       CI: true
     steps:
